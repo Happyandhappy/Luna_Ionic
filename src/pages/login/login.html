@@ -1,0 +1,61 @@
+﻿<!--
+Title: login.ts
+Author: Dillon Pulliam
+Date: 7/16/2017
+
+Purpose: This is the HTML behind login.ts which asks the user for their username and password in order to be able to open the application
+
+Input:
+    username: Hashed and compared to the hashed version of the username stored in local storage when the original login page was accessed
+    password: Hashed and compared to the hashed version of the password stored in local storage when the original login page was accessed
+
+Output:
+    Success:
+        Username and password hashed versions match those stored in database.
+
+    Failure:
+        Error message sent to the user that the hashed version of username or password didn't match and the application is not opened.
+-->
+
+<!--Make the Header-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding color="primary">
+  <h3 color="primary">Welcome! Please log in.</h3>
+  <ion-row class="logo-row">
+    <img style="width:100%; height:100%;" src="http://myluna.org/LunaImage.png" />
+  </ion-row>
+  
+  <div class="login-box">
+    <form>
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <!--Username input field-->
+            <ion-item style="background-color: inherit;">
+              <ion-input type="text" placeholder="Luna Username" name="username"></ion-input>
+            </ion-item>
+
+            <!--Password input field-->
+            <ion-item style="background-color: inherit;">
+              <ion-input type="password" placeholder="Password" name="password"></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <!--Button to go the main tab page-->
+      <button (click)="Login()" ion-button full>Login</button>
+
+    </form>
+  </div>
+  Or <a (click)="GoToCreateAccount()">Create Account Here</a>
+</ion-content>
